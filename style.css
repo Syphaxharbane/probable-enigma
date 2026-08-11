@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --green: #0f5b45;
+  --green-dark: #083d30;
+  --cream: #faf7ef;
+  --gold: #c79b45;
+  --text: #1e2723;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Poppins, sans-serif; color: var(--text); background: var(--cream); }
+a { color: inherit; text-decoration: none; }
+
+.header {
+  position: sticky; top: 0; z-index: 20;
+  height: 76px; padding: 0 6%;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(250,247,239,.94); backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e7e0d2;
+}
+.logo { font-family: "Playfair Display", serif; font-size: 25px; font-weight: 700; color: var(--green); }
+.logo span { color: var(--gold); font-weight: 500; }
+nav { display: flex; gap: 30px; font-size: 14px; }
+nav a:hover { color: var(--gold); }
+.cart-button, .hero-btn, .product-bottom button, .order-button {
+  border: 0; cursor: pointer; font-family: inherit;
+}
+.cart-button { background: var(--green); color: white; padding: 11px 17px; border-radius: 30px; }
+.cart-button span { background: var(--gold); border-radius: 50%; padding: 2px 7px; margin-left: 4px; }
+
+.hero {
+  min-height: 590px; display: flex; align-items: center; padding: 70px 8%;
+  background: linear-gradient(90deg, rgba(8,61,48,.96), rgba(8,61,48,.7), rgba(8,61,48,.15)),
+              url("sac-vert.jpeg") center/cover;
+}
+.hero-content { max-width: 600px; color: white; }
+.eyebrow { letter-spacing: 3px; font-size: 11px; color: var(--gold); font-weight: 600; margin-bottom: 15px; }
+.hero h1 { font: 600 clamp(45px, 7vw, 78px)/1.03 "Playfair Display", serif; margin-bottom: 20px; }
+.hero h1 span { color: #d9b96d; }
+.hero p:not(.eyebrow) { max-width: 500px; line-height: 1.8; color: #f1eee6; margin-bottom: 30px; }
+.hero-btn { display: inline-block; background: var(--gold); color: #fff; padding: 14px 23px; border-radius: 4px; font-weight: 500; }\n.whatsapp-btn { display: inline-block; margin-left: 10px; margin-top: 10px; background: #25d366; color: #fff; padding: 14px 23px; border-radius: 4px; font-weight: 500; }
+
+.products-section { padding: 90px 7%; }
+.section-title { text-align: center; margin-bottom: 45px; }
+.section-title h2, .about h2 { font: 600 44px "Playfair Display", serif; color: var(--green-dark); margin-bottom: 10px; }
+.section-title > p:last-child { color: #777; }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; max-width: 1200px; margin: auto; }
+.product-card { background: white; border: 1px solid #ece6da; border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,.09); }
+.image-wrap { height: 340px; overflow: hidden; background: #eee; }
+.image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.product-card:hover img { transform: scale(1.04); }
+.product-info { padding: 22px; }
+.product-info h3 { font: 600 22px "Playfair Display", serif; color: var(--green-dark); margin-bottom: 8px; }
+.product-info p { color: #777; font-size: 13px; line-height: 1.7; min-height: 45px; }
+.product-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+.product-bottom strong { color: var(--gold); font-size: 19px; }
+.product-bottom button { background: var(--green); color: white; padding: 10px 15px; border-radius: 5px; }
+.product-bottom button:hover, .order-button:hover { background: var(--green-dark); }
+
+.about { background: #eee9dc; padding: 80px 10%; display: flex; justify-content: space-between; align-items: center; gap: 50px; }
+.about > div:first-child { max-width: 700px; }
+.about h2 { font-size: 40px; }
+.about p:last-child { color: #666; line-height: 1.8; }
+.about-mark { text-align: center; color: var(--gold); font: 50px "Playfair Display", serif; }
+.about-mark small { font: 600 10px Poppins, sans-serif; letter-spacing: 3px; color: var(--green); }
+
+footer { background: var(--green-dark); color: #dce7e1; padding: 35px 7%; display: flex; justify-content: space-between; align-items: center; }
+footer .logo { color: white; }
+footer p { font-size: 12px; opacity: .7; }
+
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 30; opacity: 0; pointer-events: none; transition: .25s; }
+.overlay.show { opacity: 1; pointer-events: auto; }
+.cart { position: fixed; z-index: 31; right: -420px; top: 0; width: min(420px, 100%); height: 100vh; background: white; padding: 25px; transition: .3s; box-shadow: -10px 0 30px rgba(0,0,0,.12); display: flex; flex-direction: column; }
+.cart.show { right: 0; }
+.cart-head { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 18px; }
+.cart-head h2 { font: 600 28px "Playfair Display", serif; color: var(--green-dark); }
+.cart-head button { background: none; border: 0; font-size: 22px; cursor: pointer; }
+.cart-items { flex: 1; overflow: auto; padding: 20px 0; }
+.empty { color: #999; text-align: center; margin-top: 50px; }
+.cart-item { display: flex; justify-content: space-between; gap: 15px; border-bottom: 1px solid #eee; padding: 14px 0; }
+.cart-item small { display: block; color: #888; margin-top: 4px; }
+.remove { border: 0; background: none; color: #b24b3f; cursor: pointer; }
+.cart-total { display: flex; justify-content: space-between; font-size: 18px; padding: 20px 0; border-top: 1px solid #eee; }
+.cart-total strong { color: var(--gold); }
+.order-button { width: 100%; padding: 15px; color: white; background: var(--green); border-radius: 5px; font-size: 15px; }
+
+@media (max-width: 800px) {
+  nav { display: none; }
+  .header { padding: 0 5%; }
+  .hero { min-height: 530px; padding: 55px 7%; background-position: 60% center; }
+  .products-grid { grid-template-columns: 1fr; max-width: 430px; }
+  .image-wrap { height: 360px; }
+  .about { flex-direction: column; text-align: center; }
+  footer { flex-direction: column; gap: 15px; text-align: center; }
+}

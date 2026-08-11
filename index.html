@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSAS Maakni — Artisanat & Tradition</title>
+  <meta name="description" content="LSAS Maakni — découvrez nos créations artisanales et traditionnelles.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">LSAS <span>Maakni</span></div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#produits">Produits</a>
+      <a href="#apropos">À propos</a>
+    </nav>
+    <button class="cart-button" onclick="openCart()">🛒 Panier <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-content">
+        <p class="eyebrow">ARTISANAT • TRADITION • ÉLÉGANCE</p>
+        <h1>La beauté de notre<br><span>patrimoine</span></h1>
+        <p>Découvrez une sélection de créations inspirées de l'art traditionnel, choisies avec soin.</p>
+        <a class="hero-btn" href="#produits">Découvrir les produits</a>
+        <a class="whatsapp-btn" href="https://wa.me/213540243897" target="_blank" rel="noopener">💬 Commander sur WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="products-section" id="produits">
+      <div class="section-title">
+        <p class="eyebrow">NOTRE COLLECTION</p>
+        <h2>Nos produits</h2>
+        <p>Des pièces uniques qui racontent une histoire.</p>
+      </div>
+
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="image-wrap">
+            <img src="sac-vert.jpeg" alt="Sac traditionnel vert">
+          </div>
+          <div class="product-info">
+            <h3>Sac traditionnel vert</h3>
+            <p>Élégant sac décoré de motifs traditionnels et d'une chaîne dorée.</p>
+            <div class="product-bottom">
+              <strong>2 300 DA</strong>
+              <button onclick="addToCart('Sac traditionnel vert', 2300)">Ajouter</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="image-wrap">
+            <img src="coffret-blanc.jpeg" alt="Coffret décoratif blanc">
+          </div>
+          <div class="product-info">
+            <h3>Coffret décoratif</h3>
+            <p>Petit coffret blanc orné de motifs géométriques traditionnels.</p>
+            <div class="product-bottom">
+              <strong>500 DA</strong>
+              <button onclick="addToCart('Coffret décoratif', 500)">Ajouter</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="image-wrap">
+            <img src="pot-traditionnel.jpeg" alt="Pot traditionnel décoratif">
+          </div>
+          <div class="product-info">
+            <h3>Pot traditionnel</h3>
+            <p>Pièce artisanale décorative aux motifs rouges, blancs et noirs.</p>
+            <div class="product-bottom">
+              <strong>900 DA</strong>
+              <button onclick="addToCart('Pot traditionnel', 900)">Ajouter</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="apropos">
+      <div>
+        <p class="eyebrow">LSAS MAAKNI</p>
+        <h2>L'art traditionnel, avec une touche moderne.</h2>
+        <p>Nous mettons en valeur des créations inspirées de notre patrimoine et de notre savoir-faire.</p>
+      </div>
+      <div class="about-mark">✦<br><small>TRADITION<br>&amp; SAVOIR-FAIRE</small></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">LSAS <span>Maakni</span></div>
+    <p>© 2026 LSAS Maakni — Tous droits réservés.</p>
+  </footer>
+
+  <div class="overlay" id="overlay" onclick="closeCart()"></div>
+  <aside class="cart" id="cart">
+    <div class="cart-head">
+      <h2>Votre panier</h2>
+      <button onclick="closeCart()">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+      <p class="empty">Votre panier est vide.</p>
+    </div>
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">0 DA</strong>
+    </div>
+    <button class="order-button" onclick="placeOrder()">Passer la commande</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
